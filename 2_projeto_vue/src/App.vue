@@ -1,5 +1,8 @@
 <template>
-  <PrimeiroComponenteVue/>
+  <div>
+    <PrimeiroComponenteVue/>
+    <p>O dado de app é {{  testando  }}</p>
+  </div>
 </template>
 
 <script>
@@ -9,5 +12,10 @@
     components: {
       PrimeiroComponenteVue,
     },
+    data() {
+      return {
+        testando: "testando"
+      }
+    }
   };
 </script>
