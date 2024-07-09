@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header/>
     <PrimeiroComponenteVue/>
     <p>O dado de app é {{  testando  }}</p>
     <LifeCycle/>
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+  import Header from "./components/Header.vue";
   import PrimeiroComponenteVue from "./components/PrimeiroComponente.vue";
   import LifeCycle from "./components/LifeCycle.vue";
   import Pessoa from "./components/Pessoa.vue";
@@ -15,6 +17,7 @@
   export default {
     name: "App",
     components: {
+      Header,
       PrimeiroComponenteVue,
       LifeCycle,
       Pessoa
@@ -26,3 +29,14 @@
     }
   };
 </script>
+
+<style>
+  body {
+    background-color: #333;
+    color: #fff;
+  }
+
+  a {
+    color: red;
+  }
+</style>
