@@ -2,11 +2,15 @@
     <div>
         <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
         <p v-else>Estou em busca de novas oportunidades!</p>
-        <p>Utilizo as seguintes tecnologias:</p>
+        <p>Utilizo as seguintes tecnologias para backend:</p>
+
         <ul>
-            <li>JavaScript</li>
-            <li>PHP</li>
-            <li>Python</li>
+            <li v-for="(technology, index) in backend_technologies" :key="index">{{ technology }}</li>
+        </ul>
+
+        <p>Utilizo as seguintes tecnologias para frontend:</p>
+        <ul>
+            <li v-for="technology in frontend_technologies" :key="technology.id">{{ technology.language }}</li>
         </ul>
 
         <div>
@@ -33,7 +37,13 @@ export default {
             mostrar_email: false,
             email: 'j.roger@mail.com',
             meu_link: 'https://google.com',
-            textoBotao: 'Mostrar email'
+            textoBotao: 'Mostrar email',
+            backend_technologies: ['JavaScript', 'PHP', 'Python'],
+            frontend_technologies: [
+                {id: 1, language: 'HTML'},
+                {id: 2, language: 'CSS'},
+                {id: 3, language: 'Vue'},
+            ]
         }
     },
     methods: {
