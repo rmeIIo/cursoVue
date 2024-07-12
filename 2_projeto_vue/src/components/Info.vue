@@ -1,5 +1,7 @@
 <template>
     <div>
+        {{ compEmail }}
+
         <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
         <p v-else>Estou em busca de novas oportunidades!</p>
         <p>Utilizo as seguintes tecnologias para backend:</p>
@@ -33,9 +35,7 @@ export default {
     },
     data() {
         return {
-            esta_trabalhando: false,
             mostrar_email: false,
-            email: 'j.roger@mail.com',
             meu_link: 'https://google.com',
             textoBotao: 'Mostrar email',
             backend_technologies: ['JavaScript', 'PHP', 'Python'],
@@ -45,6 +45,10 @@ export default {
                 {id: 3, language: 'Vue'},
             ]
         }
+    },
+    props: {
+        email: String,
+        esta_trabalhando: Boolean
     },
     methods: {
         showEmail() {
